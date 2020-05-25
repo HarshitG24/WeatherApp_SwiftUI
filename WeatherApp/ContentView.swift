@@ -7,10 +7,22 @@
 //
 
 import SwiftUI
+import CoreLocation
+import SwiftyJSON
 
 struct ContentView: View {
+    @EnvironmentObject var locationmanager : LocationManager
     var body: some View {
-        Text("Hello, World!")
+        ZStack {
+            Image("background")
+            .resizable()
+            .scaledToFill()
+            .edgesIgnoringSafeArea(.all)
+    
+            (locationmanager.weather != nil && !locationmanager.forecast.isEmpty) ? HomeView() : nil
+        }.onAppear(){
+            self.locationmanager.startUpdating()
+        }
     }
 }
 
