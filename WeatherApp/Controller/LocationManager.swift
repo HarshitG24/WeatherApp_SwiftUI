@@ -79,7 +79,7 @@ class LocationManager: NSObject, ObservableObject{
     }
     
     func fetchLocation(city: String){
-            Alamofire.request("https://api.openweathermap.org/data/2.5/weather?q=\(city)&appid=57406fc83a2d732e87e13a10f577caa3").responseJSON { (response) in
+            Alamofire.request("https://api.openweathermap.org/data/2.5/weather?q=\(city)&appid=\(appid)").responseJSON { (response) in
                 
                 if(response.result.isSuccess){
                     let json = JSON(response.result.value!)

@@ -9,4 +9,4 @@
 import Foundation
 
 var url = "https://api.openweathermap.org/data/2.5/weather?"
-let appid = "57406fc83a2d732e87e13a10f577caa3"
+let appid = "YOUR_API_KEY_HERE"
